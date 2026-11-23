@@ -1,0 +1,16 @@
+# Environment
+.env
+.env.local
+
+# Node / Angular
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+frontend/coverage/
+
+# IDEs & OS
+.idea/
+.vscode/
+*.DS_Store
+Thumbs.db

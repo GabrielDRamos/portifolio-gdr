@@ -1,0 +1,53 @@
+{
+  "version": 2,
+  "skills": {
+    "angular-developer": {
+      "source": "angular/angular",
+      "commit": "f3ea683ddb931b4f8d73972aa2d146201fc0892b",
+      "sourceType": "github",
+      "skillPath": "skills/dev-skills/angular-developer/SKILL.md",
+      "computedHash": "05d5488f770874f6f12e6d365611a6eae449f29481a52cd8a89929e448426c54",
+      "installMode": "copy"
+    },
+    "design-critique": {
+      "source": "anthropics/knowledge-work-plugins",
+      "commit": "2baf6d1eded3cd7aeff0b5c5918601a5799189b4",
+      "sourceType": "github",
+      "skillPath": "design/skills/design-critique/SKILL.md",
+      "computedHash": "b9647396db0c7a2208519ae3e8313646705aef4b9a2ddab82088b54fe2404f05",
+      "installMode": "copy"
+    },
+    "emil-design-eng": {
+      "source": "emilkowalski/skills",
+      "commit": "64eb3deb9a5fbfa041faf783e0bc3fd635872e9c",
+      "sourceType": "github",
+      "skillPath": "skills/emil-design-eng/SKILL.md",
+      "computedHash": "e1b377ccde1d32743d1d3f7d8626629deb8055c9114d180c184697928cc66cc6",
+      "installMode": "copy"
+    },
+    "frontend-design": {
+      "source": "anthropics/skills",
+      "commit": "e4bb5d960d87126ff3b3a8af1a104b7db67560ba",
+      "sourceType": "github",
+      "skillPath": "skills/frontend-design/SKILL.md",
+      "computedHash": "83485963700bcf11d5bf78118facb301676b69d918fee2e45a95e7f1a2840f6c",
+      "installMode": "copy"
+    },
+    "landing-page-design": {
+      "source": "inference-sh/skills",
+      "commit": "13ccb5ea05deaa3ff9c8ba5c78d1e37756cc14b5",
+      "sourceType": "github",
+      "skillPath": "guides/design/landing-page-design/SKILL.md",
+      "computedHash": "eb618aebcc80c8d5e675c75b4fbe22448d256c468e56380f2280a85e4876d84c",
+      "installMode": "copy"
+    },
+    "web-design-guidelines": {
+      "source": "vercel-labs/agent-skills",
+      "commit": "5a37a6329fbad3666c3207392a6a7c0110e92efb",
+      "sourceType": "github",
+      "skillPath": "skills/web-design-guidelines/SKILL.md",
+      "computedHash": "5994e4cfd86144903d2ba750f862b9e36af15e3297aac983679e347b99f6cb71",
+      "installMode": "copy"
+    }
+  }
+}
