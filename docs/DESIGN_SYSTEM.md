@@ -9,7 +9,7 @@ Referência visual: canvas de design no Claude — [Portfólio GDR — Redesign]
 - **Entender em segundos**: nome, cargo (**Desenvolvedor Fullstack**) e stack principal (**Angular · Spring Boot · Flutter**) visíveis acima da dobra, sem precisar rolar.
 - **Escaneável**: seções numeradas, títulos curtos, listas com marcador `→` e tags de tecnologia em cada experiência.
 - **Contato sempre a um toque**: CTA de e-mail no hero, botão "Contato" fixo na navbar e bloco de contato ao final.
-- **Leve e rápido**: sem animações decorativas, imagens pesadas ou efeitos de gradiente; site estático com Lighthouse alto.
+- **Leve e rápido**: movimento sutil e com propósito (ver [Movimento](#movimento)), sem imagens pesadas ou efeitos de gradiente; site estático com Lighthouse alto.
 - **Conteúdo real**: nada de números inventados — placeholders entre colchetes (`[Empresa]`) até serem preenchidos.
 
 ## Direção Visual
@@ -60,4 +60,22 @@ A ordem segue o fluxo de leitura de um recrutador: quem é → contexto → onde
 
 - Contraste mínimo **WCAG AA** (todo texto ≥ 4.5:1 sobre o fundo).
 - Link "Pular para o conteúdo" e foco visível por teclado (contorno âmbar).
-- Transições apenas com `motion-safe:`; `prefers-reduced-motion` desativa a rolagem suave.
+- `prefers-reduced-motion: reduce` desativa a rolagem suave, o reveal e reduz todas as animações/transições ao estado final instantâneo (regra global em `styles.css`).
+
+## Movimento
+
+Animações só com CSS (`transform`/`opacity`, propriedades explícitas — nunca `transition: all`), sem bibliotecas.
+
+| Token / utilitário | Valor | Uso |
+| --- | --- | --- |
+| `--ease-out` | `cubic-bezier(0.23, 1, 0.32, 1)` | Entradas, hover e press (classe Tailwind `ease-out`) |
+| `--ease-in` | `cubic-bezier(0.55, 0, 1, 0.45)` | Saídas curtas (fechar menu) |
+| `ui-transition` | cor, borda, fundo, `translate`, `scale` · 200ms | Todo elemento interativo |
+| `ui-press` | `scale: 0.97` em `:active` | Botões e links (feedback de toque) |
+| `appReveal` (`RevealDirective`) | fade + 20px para cima · 700ms | Elementos ao entrar na viewport; `[revealDelay]` escalona irmãos (~80ms) |
+
+- **Rolagem**: `scroll-behavior: smooth`, barra de progresso de leitura na navbar (scroll-driven animation, só onde há suporte) e link ativo da seção atual (scroll-spy).
+- **Hero**: entrada escalonada no carregamento; indicador "online" com pulso suave.
+- **Projetos**: ao trocar o filtro, os cartões reentram escalonados.
+- **Menu mobile**: `animate.enter` / `animate.leave` do Angular com classes `menu-enter`, `menu-leave`, `menu-item-enter` e `icon-swap`.
+- **Hover**: cartões sobem 4px e reforçam a borda; setas `↗`/`→` deslocam levemente. Em telas touch o hover não dispara (Tailwind v4 usa `@media (hover: hover)`).

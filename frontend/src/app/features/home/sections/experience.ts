@@ -1,14 +1,16 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { PortfolioService } from '../../../core/services/portfolio.service';
+import { RevealDirective } from '../../../shared/directives/reveal';
 import { SectionHeadingComponent } from './section-heading';
 
 @Component({
   selector: 'app-experience-section',
-  imports: [SectionHeadingComponent],
+  imports: [SectionHeadingComponent, RevealDirective],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <section id="experiencia" aria-labelledby="experiencia-title" class="border-t border-line py-16 md:py-24">
       <app-section-heading
+        appReveal
         index="02"
         label="Experiência"
         headingId="experiencia-title"
@@ -16,9 +18,11 @@ import { SectionHeadingComponent } from './section-heading';
       />
 
       <ol class="mt-10 flex flex-col gap-4 md:mt-12">
-        @for (exp of experiences(); track exp.id) {
+        @for (exp of experiences(); track exp.id; let i = $index) {
           <li
-            class="flex flex-col gap-5 rounded-2xl border border-line p-5 sm:p-7 md:flex-row md:gap-6"
+            appReveal
+            [revealDelay]="i * 80"
+            class="flex flex-col gap-5 rounded-2xl border border-line p-5 ui-transition duration-300 hover:border-line-strong sm:p-7 md:flex-row md:gap-6"
             [class.bg-surface]="exp.current"
           >
             <div class="flex flex-wrap items-center gap-x-3 gap-y-1 md:w-52 md:shrink-0 md:flex-col md:items-start">
@@ -46,7 +50,9 @@ import { SectionHeadingComponent } from './section-heading';
 
               <ul class="mt-5 flex flex-wrap gap-2" aria-label="Tecnologias utilizadas">
                 @for (tech of exp.stack; track tech) {
-                  <li class="rounded-md border border-line-strong px-2.5 py-1 font-mono text-xs text-ink-soft">
+                  <li
+                    class="rounded-md border border-line-strong px-2.5 py-1 font-mono text-xs text-ink-soft ui-transition hover:border-accent hover:text-ink"
+                  >
                     {{ tech }}
                   </li>
                 }

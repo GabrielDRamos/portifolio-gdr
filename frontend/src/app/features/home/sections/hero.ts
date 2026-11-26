@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { PortfolioService } from '../../../core/services/portfolio.service';
 import { SocialIconComponent } from '../../../shared/components/social-icon/social-icon';
+import { RevealDirective } from '../../../shared/directives/reveal';
 
 interface IntroSegment {
   text: string;
@@ -9,7 +10,7 @@ interface IntroSegment {
 
 @Component({
   selector: 'app-hero-section',
-  imports: [SocialIconComponent],
+  imports: [SocialIconComponent, RevealDirective],
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <section
@@ -19,22 +20,28 @@ interface IntroSegment {
     >
       <div class="min-w-0 flex-[1.6]">
         <p
+          appReveal
           class="mb-6 inline-flex items-center gap-2 rounded-full border border-line px-3 py-1.5 text-[13px] text-ink-soft"
         >
-          <span class="h-2 w-2 rounded-full bg-online" aria-hidden="true"></span>
+          <span class="relative flex h-2 w-2" aria-hidden="true">
+            <span class="absolute inset-0 rounded-full bg-online motion-safe:animate-pulse-ring"></span>
+            <span class="relative h-2 w-2 rounded-full bg-online"></span>
+          </span>
           {{ profile().availability }}
         </p>
 
-        <p class="mb-3 font-mono text-sm text-accent">Olá, eu sou {{ profile().fullName }}</p>
+        <p appReveal [revealDelay]="80" class="mb-3 font-mono text-sm text-accent">Olá, eu sou {{ profile().fullName }}</p>
 
         <h1
+          appReveal
+          [revealDelay]="140"
           id="hero-title"
           class="font-display text-[2.6rem] leading-[1.02] font-bold tracking-tight sm:text-6xl lg:text-7xl"
         >
           {{ profile().role }}.
         </h1>
 
-        <p class="mt-6 max-w-xl text-lg leading-relaxed text-ink-muted">
+        <p appReveal [revealDelay]="220" class="mt-6 max-w-xl text-lg leading-relaxed text-ink-muted">
           @for (segment of introSegments(); track $index) {
             @if (segment.highlight) {
               <strong class="font-semibold text-ink">{{ segment.text }}</strong>
@@ -44,18 +51,19 @@ interface IntroSegment {
           }
         </p>
 
-        <div class="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+        <div appReveal [revealDelay]="300" class="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <a
             [href]="'mailto:' + profile().email"
-            class="inline-flex min-h-12 items-center justify-center rounded-lg bg-accent px-6 text-[15px] font-semibold text-canvas hover:bg-accent-strong motion-safe:transition-colors"
+            class="inline-flex min-h-12 items-center justify-center rounded-lg bg-accent px-6 text-[15px] font-semibold text-canvas ui-transition ui-press hover:bg-accent-strong"
           >
             Entrar em contato
           </a>
           <a
             href="#experiencia"
-            class="inline-flex min-h-12 items-center justify-center rounded-lg border border-line-strong px-6 text-[15px] font-medium text-ink hover:border-ink-muted motion-safe:transition-colors"
+            class="group inline-flex min-h-12 items-center justify-center gap-2 rounded-lg border border-line-strong px-6 text-[15px] font-medium text-ink ui-transition ui-press hover:border-ink-muted hover:bg-surface"
           >
             Ver experiência
+            <span class="inline-block ui-transition group-hover:translate-y-0.5" aria-hidden="true">↓</span>
           </a>
           <div class="flex gap-3">
             @for (social of profile().socials; track social.label) {
@@ -64,7 +72,7 @@ interface IntroSegment {
                 target="_blank"
                 rel="noopener noreferrer"
                 [attr.aria-label]="social.label"
-                class="inline-flex h-12 w-12 items-center justify-center rounded-lg border border-line-strong text-ink hover:border-accent hover:text-accent motion-safe:transition-colors"
+                class="inline-flex h-12 w-12 items-center justify-center rounded-lg border border-line-strong text-ink ui-transition ui-press hover:-translate-y-0.5 hover:border-accent hover:text-accent"
               >
                 <app-social-icon [icon]="social.icon" />
               </a>
@@ -74,17 +82,27 @@ interface IntroSegment {
       </div>
 
       <!-- Cartão de stack principal -->
-      <div class="min-w-0 flex-1 overflow-hidden rounded-2xl border border-line bg-surface">
+      <div
+        appReveal
+        [revealDelay]="260"
+        class="min-w-0 flex-1 overflow-hidden rounded-2xl border border-line bg-surface ui-transition duration-300 hover:border-line-strong"
+      >
         <div class="flex items-center justify-between border-b border-line px-5 py-3.5 font-mono text-[13px] text-ink-muted">
           <span>stack.yml</span>
           <span class="text-xs">fullstack</span>
         </div>
         <ul>
           @for (tech of profile().coreStack; track tech.name; let i = $index) {
-            <li class="flex items-center justify-between gap-4 border-b border-line px-5 py-5 last:border-b-0">
+            <li
+              appReveal
+              [revealDelay]="380 + i * 90"
+              class="group flex items-center justify-between gap-4 border-b border-line px-5 py-5 ui-transition last:border-b-0 hover:bg-surface-2/60"
+            >
               <div>
                 <p class="font-mono text-xs text-ink-muted">0{{ i + 1 }} · {{ tech.layer }}</p>
-                <p class="mt-1.5 font-display text-[22px] font-semibold">{{ tech.name }}</p>
+                <p class="mt-1.5 font-display text-[22px] font-semibold ui-transition group-hover:translate-x-1">
+                  {{ tech.name }}
+                </p>
               </div>
               <span class="font-mono text-xs text-accent">{{ tech.language }}</span>
             </li>

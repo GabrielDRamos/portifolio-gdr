@@ -29,7 +29,8 @@ portifolio-gdr/
 │       │   ├── data/           # Dados do portfólio em PT-BR (edite aqui seu conteúdo)
 │       │   └── services/       # PortfolioService com estado reativo via Signals
 │       ├── shared/
-│       │   └── components/     # navbar/, social-icon/
+│       │   ├── components/     # navbar/, social-icon/
+│       │   └── directives/     # reveal.ts (RevealDirective — animação ao entrar na viewport)
 │       └── features/
 │           └── home/
 │               ├── home.ts     # Compõe navbar, seções e footer
