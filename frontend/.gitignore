@@ -39,6 +39,9 @@ testem.log
 /typings
 __screenshots__/
 
+# Vercel CLI
+.vercel
+
 # System files
 .DS_Store
 Thumbs.db

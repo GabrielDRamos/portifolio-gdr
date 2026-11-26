@@ -16,7 +16,7 @@ Este documento define as tecnologias, versões alvo e ferramentas escolhidas par
 
 - **Simplicidade e velocidade**: Sem necessidade de manter servidor backend ou banco de dados para conteúdo estático de portfólio.
 - **Deploy gratuito e rápido**: O build estático (`frontend/dist/`) pode ser publicado facilmente em Vercel, Netlify, GitHub Pages ou Cloudflare Pages.
-- **Angular 22 + Node 26**: Compatibilidade nativa (`engines.node: ">=26.0.0"`), com reatividade baseada em Signals e Tailwind CSS v4.
+- **Angular 22 + Node 26**: Compatibilidade nativa (`engines.node: "^24.15.0 || ^26.0.0"` — o intervalo fechado também fixa a versão usada no build da Vercel), com reatividade baseada em Signals e Tailwind CSS v4.
 
 ## Pré-requisitos de Ambiente Local
 
@@ -28,3 +28,7 @@ Este documento define as tecnologias, versões alvo e ferramentas escolhidas par
 - Servidor de desenvolvimento: `npm start` (`http://localhost:4200`)
 - Build de produção: `npm run build`
 - Testes unitários: `npm test`
+
+## Deploy (Vercel)
+
+Configuração versionada em [`frontend/vercel.json`](../frontend/vercel.json): preset Angular, `npm run build`, saída em `dist/frontend/browser`, fallback de rotas para `index.html` e cache longo (`immutable`) para os `.js`/`.css` com hash. Passo a passo no [README](../README.md#deploy-na-vercel).

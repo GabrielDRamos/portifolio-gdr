@@ -14,6 +14,19 @@ npm start
 
 Acesse `http://localhost:4200`.
 
+## Deploy na Vercel
+
+O build, a pasta de saída e o fallback de rotas já estão em [`frontend/vercel.json`](frontend/vercel.json), e a versão do Node em `engines` no `package.json`.
+
+1. Envie o repositório para o GitHub.
+2. Na Vercel: **Add New → Project** → importe o repositório.
+3. Em **Root Directory**, escolha `frontend` (único ajuste manual — o app não fica na raiz).
+4. Clique em **Deploy**.
+
+A cada push na branch de produção o site é atualizado; cada pull request ganha uma URL de prévia.
+
+Alternativa pela linha de comando (dentro de `frontend/`): `npx vercel` para prévia e `npx vercel --prod` para produção.
+
 ## Documentação Técnica
 
 - [AGENTS.md](AGENTS.md) — Regras, convenções de código e diretrizes para agentes no repositório.
