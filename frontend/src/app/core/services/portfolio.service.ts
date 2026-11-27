@@ -19,9 +19,16 @@ export class PortfolioService {
   private readonly selectedTagState = signal<string>(ALL_PROJECTS_TAG);
   readonly selectedTag = this.selectedTagState.asReadonly();
 
-  /** Filter options: core stack first (in profile order), then the remaining project technologies. */
+  /**
+   * Filter options: each project's primary technology (first item of `stack`),
+   * core stack first (in profile order), then the rest in project order.
+   */
   readonly projectTags = computed(() => {
-    const used = new Set(this.projects().flatMap((project) => project.stack));
+    const used = new Set(
+      this.projects()
+        .map((project) => project.stack[0])
+        .filter((tech): tech is string => tech !== undefined),
+    );
     const core = this.profile()
       .coreStack.map((tech) => tech.name)
       .filter((name) => used.has(name));

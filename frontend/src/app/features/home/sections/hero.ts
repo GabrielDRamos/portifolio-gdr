@@ -42,13 +42,8 @@ interface IntroSegment {
         </h1>
 
         <p appReveal [revealDelay]="220" class="mt-6 max-w-xl text-lg leading-relaxed text-ink-muted">
-          @for (segment of introSegments(); track $index) {
-            @if (segment.highlight) {
-              <strong class="font-semibold text-ink">{{ segment.text }}</strong>
-            } @else {
-              {{ segment.text }}
-            }
-          }
+          <!-- Kept on one line: template whitespace between segments would render as a space before punctuation. -->
+          @for (segment of introSegments(); track $index) {<span [class.font-semibold]="segment.highlight" [class.text-ink]="segment.highlight">{{ segment.text }}</span>}
         </p>
 
         <div appReveal [revealDelay]="300" class="mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap">

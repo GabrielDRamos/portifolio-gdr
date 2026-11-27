@@ -6,7 +6,7 @@ Referência visual: canvas de design no Claude — [Portfólio GDR — Redesign]
 
 ## Princípios (padrão valorizado por recrutadores)
 
-- **Entender em segundos**: nome, cargo (**Desenvolvedor Fullstack**) e stack principal (**Angular · Spring Boot · Flutter**) visíveis acima da dobra, sem precisar rolar.
+- **Entender em segundos**: nome, cargo (**Desenvolvedor Fullstack**) e stack principal (**Angular · Spring Boot · React Native · OracleDB**) visíveis acima da dobra, sem precisar rolar.
 - **Escaneável**: seções numeradas, títulos curtos, listas com marcador `→` e tags de tecnologia em cada experiência.
 - **Contato sempre a um toque**: CTA de e-mail no hero, botão "Contato" fixo na navbar e bloco de contato ao final.
 - **Leve e rápido**: movimento sutil e com propósito (ver [Movimento](#movimento)), sem imagens pesadas ou efeitos de gradiente; site estático com Lighthouse alto.
@@ -47,7 +47,7 @@ Referência visual: canvas de design no Claude — [Portfólio GDR — Redesign]
 ## Seções (nesta ordem)
 
 1. **Navbar**: marca `gabriel.dev`, links Início / Sobre / Experiência / Projetos / Tecnologias e botão "Contato"; menu hambúrguer acessível no mobile (`aria-expanded`).
-2. **Início (Hero)**: status de disponibilidade, saudação, cargo em destaque, resumo com as tecnologias em negrito, CTAs (contato, experiência, GitHub, LinkedIn) e cartão `stack.yml` com as três camadas (Web / Back-end / Mobile).
+2. **Início (Hero)**: status de disponibilidade, saudação, cargo em destaque, resumo com as tecnologias em negrito, CTAs (contato, experiência, GitHub, LinkedIn) e cartão `stack.yml` com as camadas da stack principal (Web / Back-end / Mobile / Banco de dados).
 3. **01 — Sobre**: título de impacto, bio em dois parágrafos e grade de fatos rápidos (atuação, localização, status).
 4. **02 — Experiência**: cartões com período, local, selo "Atual", cargo, empresa, conquistas e tags de stack.
 5. **03 — Projetos**: filtro por tecnologia (Todos / Angular / Spring Boot / Flutter…) e cartões em formato de mini case study — tipo, ano, problema/solução, conquistas, stack e links de código/demo.

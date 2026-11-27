@@ -12,7 +12,7 @@ Portfólio pessoal desenvolvido 100% em **Angular 22+** (TypeScript estrito, Sta
 
 ### Escopo Funcional (MVP)
 
-Portfólio de **Desenvolvedor Fullstack** (Angular · Spring Boot · Flutter), página única nesta ordem:
+Portfólio de **Desenvolvedor Fullstack** (Angular · Spring Boot · React Native · OracleDB), página única nesta ordem:
 
 - Início (hero com cargo, stack principal e CTAs de contato)
 - Sobre (bio, fatos rápidos, links sociais)

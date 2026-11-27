@@ -42,7 +42,7 @@ portifolio-gdr/
 ## Modelo de Dados (`core/models/portfolio.model.ts`)
 
 - **`Profile`**: `fullName`, `brand`, `brandSuffix`, `role`, `intro`, `coreStack` (`CoreTech[]`: `layer`, `name`, `language`), `aboutTitle`, `bio`, `facts` (`label`, `value`), `availability`, `contactMessage`, `email`, `socials` (`label`, `url`, `icon`)
-- **`Project`**: `slug`, `title`, `kind` (`Fullstack` | `Web` | `API` | `Mobile`), `year`, `description`, `highlights`, `stack`, `repoUrl?`, `liveUrl?` — filtrado por tecnologia via `PortfolioService.filteredProjects`
+- **`Project`**: `slug`, `title`, `kind` (`Fullstack` | `Web` | `API` | `Mobile`), `year?`, `description`, `highlights`, `stack`, `repoUrl?`, `liveUrl?` — filtrado por tecnologia via `PortfolioService.filteredProjects`; os botões do filtro (`projectTags`) usam só a tecnologia principal de cada projeto (primeiro item de `stack`)
 - **`SkillGroup`**: `category` (`frontend` | `backend` | `mobile` | `tools`), `label`, `title`, `items`
 - **`Experience`**: `id`, `role`, `company`, `period`, `location`, `current`, `highlights`, `stack`
 

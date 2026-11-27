@@ -41,7 +41,8 @@ export interface Project {
   slug: string;
   title: string;
   kind: ProjectKind;
-  year: string;
+  /** Optional: hidden on the card when unknown. */
+  year?: string;
   description: string;
   highlights: string[];
   stack: string[];

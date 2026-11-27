@@ -54,7 +54,9 @@ import { SectionHeadingComponent } from './section-heading';
           >
             <div class="flex items-center justify-between gap-3 font-mono text-xs">
               <span class="text-accent">{{ project.kind }}</span>
-              <span class="text-ink-muted">{{ project.year }}</span>
+              @if (project.year) {
+                <span class="text-ink-muted">{{ project.year }}</span>
+              }
             </div>
 
             <h3 class="mt-3 font-display text-xl font-semibold sm:text-[22px]">{{ project.title }}</h3>

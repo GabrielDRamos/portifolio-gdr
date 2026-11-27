@@ -48,15 +48,17 @@ import { SectionHeadingComponent } from './section-heading';
                 }
               </ul>
 
-              <ul class="mt-5 flex flex-wrap gap-2" aria-label="Tecnologias utilizadas">
-                @for (tech of exp.stack; track tech) {
-                  <li
-                    class="rounded-md border border-line-strong px-2.5 py-1 font-mono text-xs text-ink-soft ui-transition hover:border-accent hover:text-ink"
-                  >
-                    {{ tech }}
-                  </li>
-                }
-              </ul>
+              @if (exp.stack.length > 0) {
+                <ul class="mt-5 flex flex-wrap gap-2" aria-label="Tecnologias utilizadas">
+                  @for (tech of exp.stack; track tech) {
+                    <li
+                      class="rounded-md border border-line-strong px-2.5 py-1 font-mono text-xs text-ink-soft ui-transition hover:border-accent hover:text-ink"
+                    >
+                      {{ tech }}
+                    </li>
+                  }
+                </ul>
+              }
             </div>
           </li>
         }
