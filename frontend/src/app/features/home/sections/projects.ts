@@ -12,7 +12,7 @@ import { SectionHeadingComponent } from './section-heading';
       <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
         <app-section-heading
           appReveal
-          index="03"
+          index="04"
           label="Projetos"
           headingId="projetos-title"
           title="O que já coloquei de pé."

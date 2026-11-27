@@ -1,11 +1,12 @@
 import { Injectable, computed, signal } from '@angular/core';
 import {
+  PORTFOLIO_EDUCATION,
   PORTFOLIO_EXPERIENCES,
   PORTFOLIO_PROFILE,
   PORTFOLIO_PROJECTS,
   PORTFOLIO_SKILLS,
 } from '../data/portfolio.data';
-import { Experience, Profile, Project, SkillGroup } from '../models/portfolio.model';
+import { Education, Experience, Profile, Project, SkillGroup } from '../models/portfolio.model';
 
 export const ALL_PROJECTS_TAG = 'Todos';
 
@@ -13,6 +14,7 @@ export const ALL_PROJECTS_TAG = 'Todos';
 export class PortfolioService {
   readonly profile = signal<Profile>(PORTFOLIO_PROFILE).asReadonly();
   readonly experiences = signal<Experience[]>(PORTFOLIO_EXPERIENCES).asReadonly();
+  readonly education = signal<Education[]>(PORTFOLIO_EDUCATION).asReadonly();
   readonly projects = signal<Project[]>(PORTFOLIO_PROJECTS).asReadonly();
   readonly skillGroups = signal<SkillGroup[]>(PORTFOLIO_SKILLS).asReadonly();
 

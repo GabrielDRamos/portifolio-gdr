@@ -11,7 +11,7 @@ import { SectionHeadingComponent } from './section-heading';
     <section id="tecnologias" aria-labelledby="tecnologias-title" class="border-t border-line py-16 md:py-24">
       <app-section-heading
         appReveal
-        index="04"
+        index="05"
         label="Tecnologias"
         headingId="tecnologias-title"
         title="Ferramentas que uso para entregar."

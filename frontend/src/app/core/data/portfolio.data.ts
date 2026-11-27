@@ -1,4 +1,4 @@
-import { Experience, Profile, Project, SkillGroup } from '../models/portfolio.model';
+import { Education, Experience, Profile, Project, SkillGroup } from '../models/portfolio.model';
 
 export const PORTFOLIO_PROFILE: Profile = {
   fullName: 'Gabriel Duarte Ramos',
@@ -15,12 +15,12 @@ export const PORTFOLIO_PROFILE: Profile = {
   ],
   aboutTitle: 'Do banco de dados à tela do celular.',
   bio: [
-    'Sou desenvolvedor fullstack e analista de sistemas na Unimed JP, onde atuo da análise de requisitos à implementação: novas telas e funcionalidades no aplicativo de beneficiários, evolução do sistema de agendamento online e relatórios corporativos que apoiam a tomada de decisão — sempre sobre a arquitetura MVC.',
-    'Comecei em 2017 como estagiário na SS Digital, onde passei por suporte e infraestrutura até chegar ao desenvolvimento. Essa trajetória me ensinou a entender a regra de negócio e quem usa o sistema antes de escrever código. Sou formado em Análise e Desenvolvimento de Sistemas (UNIPÊ) e pós-graduando em Fullstack Web Development (UNIESP).',
+    'Sou desenvolvedor fullstack na Basis Tecnologia da Informação, onde trabalho remotamente na manutenção e no desenvolvimento de sistemas para o Ministério do Meio Ambiente, com Angular e TypeScript no front-end e Java com Spring Boot e PostgreSQL no back-end. Antes, como analista de sistemas na Unimed JP, atuei da análise de requisitos à implementação: aplicativo de beneficiários em React Native, sistema de agendamento online em Angular e Spring Boot e relatórios corporativos — sempre sobre a arquitetura MVC.',
+    'Comecei em 2017 como estagiário na SS Digital, onde passei por suporte e infraestrutura até chegar ao desenvolvimento. Essa trajetória me ensinou a entender a regra de negócio e quem usa o sistema antes de escrever código. Sou formado em Análise e Desenvolvimento de Sistemas (UNIPÊ) e pós-graduado em Fullstack Web Development (UNIESP).',
   ],
   facts: [
     { label: 'Atuação', value: 'Fullstack · Web + Mobile' },
-    { label: 'Localização', value: 'João Pessoa · PB' },
+    { label: 'Localização', value: 'João Pessoa · PB · Remoto' },
     { label: 'Em TI desde', value: '2017' },
   ],
   availability: 'Disponível para novas oportunidades',
@@ -34,12 +34,25 @@ export const PORTFOLIO_PROFILE: Profile = {
 
 export const PORTFOLIO_EXPERIENCES: Experience[] = [
   {
+    id: 'exp-basis',
+    role: 'Desenvolvedor Fullstack',
+    company: 'Basis Tecnologia da Informação S.A.',
+    period: 'jun/2026 — Atual',
+    location: 'Remoto',
+    current: true,
+    highlights: [
+      'Manutenção e desenvolvimento de sistemas para o Ministério do Meio Ambiente.',
+      'Atuação fullstack: front-end em Angular com TypeScript e back-end em Java com Spring Boot, com dados em PostgreSQL.',
+    ],
+    stack: ['Angular', 'TypeScript', 'Spring Boot', 'Java', 'PostgreSQL'],
+  },
+  {
     id: 'exp-unimed-jp',
     role: 'Analista de Sistemas Júnior',
     company: 'Unimed JP',
-    period: 'fev/2025 — Atual',
+    period: 'fev/2025 — mai/2026',
     location: 'João Pessoa · PB',
-    current: true,
+    current: false,
     highlights: [
       'Aplicativo Unimed JP (React Native + PL/SQL): desenvolvimento de novas telas e funcionalidades e manutenção do back-end, integrando experiência do usuário e regras de negócio.',
       'Sistema de Agendamento Online (Angular, Thymeleaf e Spring Boot): manutenção e evolução de funcionalidades críticas, com foco em desempenho e usabilidade.',
@@ -90,39 +103,39 @@ export const PORTFOLIO_EXPERIENCES: Experience[] = [
     ],
     stack: ['Windows', 'Linux', 'Redes', 'WordPress', 'Adianti Framework'],
   },
+];
+
+export const PORTFOLIO_EDUCATION: Education[] = [
   {
     id: 'edu-uniesp',
-    role: 'Pós-graduação em Fullstack Web Development',
-    company: 'UNIESP',
-    period: 'Em andamento',
-    location: 'Paraíba',
-    current: false,
+    level: 'Pós-graduação',
+    title: 'Fullstack Web Development',
+    institution: 'UNIESP',
+    status: 'Concluída',
     highlights: ['Especialização em desenvolvimento web de ponta a ponta, do front-end ao back-end.'],
-    stack: [],
+    tags: [],
   },
   {
     id: 'edu-unipe',
-    role: 'Análise e Desenvolvimento de Sistemas',
-    company: 'UNIPÊ',
-    period: 'Graduação',
-    location: 'João Pessoa · PB',
-    current: false,
+    level: 'Graduação',
+    title: 'Análise e Desenvolvimento de Sistemas',
+    institution: 'UNIPÊ',
+    status: 'Concluída',
     highlights: ['Graduação tecnológica com base em engenharia de software, programação e bancos de dados.'],
-    stack: [],
+    tags: [],
   },
   {
     id: 'edu-certificates',
-    role: 'Cursos e certificações',
-    company: 'Alura · DevMedia · Curso em Vídeo · TakeBlip',
-    period: 'Formação complementar',
-    location: 'Online',
-    current: false,
+    level: 'Cursos livres',
+    title: 'Certificações',
+    institution: 'Alura · DevMedia · Curso em Vídeo · TakeBlip',
+    status: 'Complementar',
     highlights: [
       'Formação Flutter (Alura) e Bootcamp Web Developer (TakeBlip).',
       'DevMedia: MVC, Node.js, JavaScript, Java e Kotlin.',
       'Curso em Vídeo: JavaScript, Git e Linux.',
     ],
-    stack: ['Flutter', 'Node.js', 'JavaScript', 'Java', 'Kotlin', 'Git', 'Linux'],
+    tags: ['Flutter', 'Node.js', 'JavaScript', 'Java', 'Kotlin', 'Git', 'Linux'],
   },
 ];
 

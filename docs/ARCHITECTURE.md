@@ -34,7 +34,7 @@ portifolio-gdr/
 │       └── features/
 │           └── home/
 │               ├── home.ts     # Compõe navbar, seções e footer
-│               └── sections/   # hero, about, experience, projects, technologies, contact, section-heading
+│               └── sections/   # hero, about, experience, education, projects, technologies, contact, section-heading
 ├── AGENTS.md                   # Regras globais para agentes
 └── README.md
 ```
@@ -45,10 +45,11 @@ portifolio-gdr/
 - **`Project`**: `slug`, `title`, `kind` (`Fullstack` | `Web` | `API` | `Mobile`), `year?`, `description`, `highlights`, `stack`, `repoUrl?`, `liveUrl?` — filtrado por tecnologia via `PortfolioService.filteredProjects`; os botões do filtro (`projectTags`) usam só a tecnologia principal de cada projeto (primeiro item de `stack`)
 - **`SkillGroup`**: `category` (`frontend` | `backend` | `mobile` | `tools`), `label`, `title`, `items`
 - **`Experience`**: `id`, `role`, `company`, `period`, `location`, `current`, `highlights`, `stack`
+- **`Education`**: `id`, `level` (ex.: Pós-graduação), `title`, `institution`, `status` (ex.: Concluída), `highlights`, `tags` — seção própria "Formação", separada das experiências
 
 ## Seções e Âncoras
 
-Página única com navegação por âncoras, nesta ordem: `#inicio` → `#sobre` → `#experiencia` → `#projetos` → `#tecnologias` → `#contato`.
+Página única com navegação por âncoras, nesta ordem: `#inicio` → `#sobre` → `#experiencia` → `#formacao` → `#projetos` → `#tecnologias` → `#contato`.
 
 ## Abordagem Mobile-First
 

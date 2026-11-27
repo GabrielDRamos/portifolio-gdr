@@ -46,15 +46,16 @@ Referência visual: canvas de design no Claude — [Portfólio GDR — Redesign]
 
 ## Seções (nesta ordem)
 
-1. **Navbar**: marca `gabriel.dev`, links Início / Sobre / Experiência / Projetos / Tecnologias e botão "Contato"; menu hambúrguer acessível no mobile (`aria-expanded`).
+1. **Navbar**: marca `gabriel.dev`, links Início / Sobre / Experiência / Formação / Projetos / Tecnologias (o link da seção visível fica destacado) e botão "Contato"; menu hambúrguer acessível no mobile (`aria-expanded`).
 2. **Início (Hero)**: status de disponibilidade, saudação, cargo em destaque, resumo com as tecnologias em negrito, CTAs (contato, experiência, GitHub, LinkedIn) e cartão `stack.yml` com as camadas da stack principal (Web / Back-end / Mobile / Banco de dados).
 3. **01 — Sobre**: título de impacto, bio em dois parágrafos e grade de fatos rápidos (atuação, localização, status).
 4. **02 — Experiência**: cartões com período, local, selo "Atual", cargo, empresa, conquistas e tags de stack.
-5. **03 — Projetos**: filtro por tecnologia (Todos / Angular / Spring Boot / Flutter…) e cartões em formato de mini case study — tipo, ano, problema/solução, conquistas, stack e links de código/demo.
-6. **04 — Tecnologias**: quatro grupos (Front-end, Back-end, Mobile, Ferramentas) com a tecnologia âncora em destaque.
-7. **Contato + Footer**: chamada final com e-mail e rodapé enxuto.
+5. **03 — Formação**: cartões de pós-graduação, graduação e certificações com nível, instituição e selo de status ("Concluída").
+6. **04 — Projetos**: filtro pela tecnologia principal de cada projeto (Todos / Angular / Kotlin / React…) e cartões em formato de mini case study — tipo, ano, problema/solução, conquistas, stack e links de código/demo.
+7. **05 — Tecnologias**: quatro grupos (Front-end, Back-end, Mobile, Ferramentas) com a tecnologia âncora em destaque.
+8. **Contato + Footer**: chamada final com e-mail e rodapé enxuto.
 
-A ordem segue o fluxo de leitura de um recrutador: quem é → contexto → onde já trabalhou → o que já construiu → detalhamento técnico → como falar com você.
+A ordem segue o fluxo de leitura de um recrutador: quem é → contexto → onde já trabalhou → onde estudou → o que já construiu → detalhamento técnico → como falar com você.
 
 ## Acessibilidade & Movimento
 

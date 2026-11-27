@@ -3,6 +3,7 @@ import { PortfolioService } from '../../core/services/portfolio.service';
 import { NavbarComponent } from '../../shared/components/navbar/navbar';
 import { AboutSectionComponent } from './sections/about';
 import { ContactSectionComponent } from './sections/contact';
+import { EducationSectionComponent } from './sections/education';
 import { ExperienceSectionComponent } from './sections/experience';
 import { HeroSectionComponent } from './sections/hero';
 import { ProjectsSectionComponent } from './sections/projects';
@@ -15,6 +16,7 @@ import { TechnologiesSectionComponent } from './sections/technologies';
     HeroSectionComponent,
     AboutSectionComponent,
     ExperienceSectionComponent,
+    EducationSectionComponent,
     ProjectsSectionComponent,
     TechnologiesSectionComponent,
     ContactSectionComponent,
@@ -35,6 +37,7 @@ import { TechnologiesSectionComponent } from './sections/technologies';
         <app-hero-section />
         <app-about-section />
         <app-experience-section />
+        <app-education-section />
         <app-projects-section />
         <app-technologies-section />
         <app-contact-section />

@@ -16,7 +16,8 @@ Portfólio de **Desenvolvedor Fullstack** (Angular · Spring Boot · React Nativ
 
 - Início (hero com cargo, stack principal e CTAs de contato)
 - Sobre (bio, fatos rápidos, links sociais)
-- Experiência profissional e formação (cartões com conquistas e stack)
+- Experiência profissional (cartões com conquistas e stack)
+- Formação (graduação, pós-graduação e certificações)
 - Projetos (mini case studies com filtro por tecnologia)
 - Tecnologias (agrupadas em Front-end, Back-end, Mobile e Ferramentas)
 - Contato (e-mail) e footer

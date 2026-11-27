@@ -59,6 +59,19 @@ export interface SkillGroup {
   items: string[];
 }
 
+/** Degrees and complementary courses, shown in the "Formação" section. */
+export interface Education {
+  id: string;
+  /** e.g. "Pós-graduação", "Graduação", "Cursos livres". */
+  level: string;
+  title: string;
+  institution: string;
+  /** e.g. "Concluída", "Em andamento". */
+  status: string;
+  highlights: string[];
+  tags: string[];
+}
+
 export interface Experience {
   id: string;
   role: string;

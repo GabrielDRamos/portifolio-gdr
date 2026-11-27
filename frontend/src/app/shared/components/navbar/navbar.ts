@@ -40,7 +40,7 @@ interface NavItem {
             <a
               [href]="item.href"
               [attr.aria-current]="activeHref() === item.href ? 'location' : null"
-              class="relative inline-flex min-h-11 items-center px-3 text-sm ui-transition after:absolute after:inset-x-3 after:bottom-2 after:h-px after:origin-left after:bg-accent after:ui-transition after:duration-300 hover:text-ink hover:after:scale-x-100"
+              class="relative inline-flex min-h-11 items-center px-2 text-sm ui-transition after:absolute after:inset-x-2 lg:px-3 lg:after:inset-x-3 after:bottom-2 after:h-px after:origin-left after:bg-accent after:ui-transition after:duration-300 hover:text-ink hover:after:scale-x-100"
               [class]="activeHref() === item.href ? 'text-ink after:scale-x-100' : 'text-ink-muted after:scale-x-0'"
             >
               {{ item.label }}
@@ -140,6 +140,7 @@ export class NavbarComponent {
     { label: 'Início', href: '#inicio' },
     { label: 'Sobre', href: '#sobre' },
     { label: 'Experiência', href: '#experiencia' },
+    { label: 'Formação', href: '#formacao' },
     { label: 'Projetos', href: '#projetos' },
     { label: 'Tecnologias', href: '#tecnologias' },
   ];
